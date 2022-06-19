@@ -12,13 +12,15 @@ add_compile_options(-Wall)
 set(LIBRARY_DIR /home/ibrahimov/dev/CPPLibs CACHE PATH "Path to libs folder")
 
 find_package(Eigen3 REQUIRED)
-find_package(OpenCV REQUIRED)
-
+# find_package(OpenCV REQUIRED)
 
 
 include_directories(models)
+include_directories(util)
+
 set(HEADER_FILES
     models/camera_models.h
+    util/Eigen.h
 )
 
 set(SOURCE_FILES 
