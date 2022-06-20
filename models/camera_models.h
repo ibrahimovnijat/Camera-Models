@@ -41,8 +41,7 @@ private:
     T _fx, _fy, _cx, _cy;
 public:
     PinholeCamera(){};
-    
-    ~PinholeCamera(){};
+   ~PinholeCamera(){};
     
     void initialize(const CameraParams<T>& params) {
 
@@ -88,8 +87,8 @@ template<class T> class ExtendedUnifiedCamera: public CameraModel<T> {
 private:
     T _fx, _fy, _cx, _cy, _alpha, _beta;
 public:  
-    ExtendedUnifiedCamera() {};
-    virtual ~ExtendedUnifiedCamera() {};
+    ExtendedUnifiedCamera();
+   ~ExtendedUnifiedCamera();
 
     void initialize(const CameraParams<T>& params) {
         _fx = params.fx;
@@ -150,8 +149,8 @@ private:
     T _fx, _fy, _cx, _cy, _xi, _alpha;
 
 public:
-    DoubleSphereCamera() = default;
-    virtual ~DoubleSphereCamera() = default;
+    DoubleSphereCamera();
+   ~DoubleSphereCamera();
 
     void initialize(const CameraParams<T>& params) {
 
@@ -213,8 +212,8 @@ private:
     T _fx, _fy, _cx, _cy, _k1, _k2, _k3, _k4;
 
 public:
-    KannalaBrandtCamera() = default;
-    virtual ~KannalaBrandtCamera() = default;
+    KannalaBrandtCamera();
+   ~KannalaBrandtCamera();
 
     void initialize(const CameraParams<T>& params) {
         _fx = params.fx;
