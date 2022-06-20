@@ -40,13 +40,9 @@ template<class T>  class PinholeCamera: public CameraModel<T> {
 private:
     T _fx, _fy, _cx, _cy;
 public:
-    PinholeCamera(){
-        std::cout << "PinholeCamera constructor called" << std::endl;
-    }
+    PinholeCamera(){};
     
-    ~PinholeCamera(){
-        std::cout << "PinholeCamera destructor called" << std::endl;
-    }
+    ~PinholeCamera(){};
     
     void initialize(const CameraParams<T>& params) {
 
@@ -288,7 +284,7 @@ public:
         k << _k4, 0, _k3, 0, _k2, 0, _k1, 0, 1, -r;
         k_prime << 9 * _k4, 0, 7 * _k3, 0, 5 * _k2, 0, 3 * _k1, 0, 1;
 
-        //implement Newton's method to find roots
+        //Newton's method to find polynomial roots
         const T& iters = 10;
         T theta_prev = 0.75;  // set initial value
         bool converged = false;

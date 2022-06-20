@@ -12,8 +12,6 @@ add_compile_options(-Wall)
 set(LIBRARY_DIR /home/ibrahimov/dev/CPPLibs CACHE PATH "Path to libs folder")
 
 find_package(Eigen3 REQUIRED)
-# find_package(OpenCV REQUIRED)
-
 
 include_directories(models)
 include_directories(util)
@@ -29,5 +27,5 @@ set(SOURCE_FILES
 
 add_executable(main main.cpp ${HEADER_FILES} ${SOURCE_FILES})
 
-include_directories(${OpenCV_INCLUDE_DIRS} ${EIGEN3_INCLUDE_DIR})
-target_link_libraries(main Eigen3::Eigen ${OpenCV_LIBS})
+include_directories(${EIGEN3_INCLUDE_DIR})
+target_link_libraries(main Eigen3::Eigen)
